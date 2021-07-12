@@ -44,6 +44,9 @@ hi PmenuThumb guibg=#7D6F64
 let mapleader = " "
 nnoremap <silent> Q <nop>
 nnoremap <Leader><CR> :source %<CR>
+
 inoremap jk <Esc>
 inoremap <expr> <silent>; getline('.')[-1:] == ";" ? "\<Esc><CR>" : "\<Esc>A;<CR>"
 
+nnoremap <C-S> :update<cr>
+inoremap <C-S> <Esc>:update<cr>
