@@ -1,3 +1,4 @@
+set clipboard=unnamedplus
 set relativenumber
 set nohlsearch
 set hidden
