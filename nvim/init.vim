@@ -45,5 +45,5 @@ let mapleader = " "
 nnoremap <silent> Q <nop>
 nnoremap <Leader><CR> :source $MYVIMRC<CR>
 inoremap jk <Esc>
-inoremap <expr> <leader>j getline('.')[-1:] == ";" ? "\<Esc>o" : "\<Esc>A;<Esc>o"
+inoremap <expr> <silent>; getline('.')[-1:] == ";" ? "\<Esc><CR>" : "\<Esc>A;<CR>"
 
