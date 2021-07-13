@@ -17,6 +17,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 set background=dark
