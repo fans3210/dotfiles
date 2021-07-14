@@ -19,6 +19,14 @@ require('telescope').setup{
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+    extensions = {
+        fzf = {
+            override_generic_sort = false,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        }
+    }
   }
 }
+require('telescope').load_extension('fzf')
 EOF

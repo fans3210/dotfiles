@@ -10,6 +10,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
@@ -53,5 +54,5 @@ inoremap <C-S> <Esc>:update<cr>
 
 augroup jsfilemapping 
     autocmd!
-    autocmd Filetype javascript,javascriptreact,typescript,typescriptreact inoremap <expr> <silent>; getline('.')[-1:] == ";" ? "\<Esc><CR>" : "\<Esc>A;<CR>"
+    autocmd Filetype javascript,javascriptreact,typescript,typescriptreact inoremap <expr> <silent>; getline('.')[-1:] == ";" ? "\<Esc>A" : "\<Esc>A;"
 augroup END
