@@ -15,10 +15,13 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+
+Plug 'alvan/vim-closetag'
+
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 set background=dark
