@@ -125,8 +125,9 @@ nvim_lsp.diagnosticls.setup {
 
 EOF
 
-" show hover doc
+" lsp saga keymaps
 nnoremap <silent>K :Lspsaga hover_doc<CR>
 inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
 nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
 nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent>gr :Lspsaga rename<CR>

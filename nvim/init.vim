@@ -19,17 +19,14 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
-Plug 'alvan/vim-closetag'
-
+" Plug 'alvan/vim-closetag'
+Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 call plug#end()
 
 set background=dark
 " colorscheme gruvbox
 colorscheme onehalfdark
-
-
-
 
 
 " gruvbox pmenu settings for autocompletion color since onehalfdark popup
@@ -59,3 +56,16 @@ augroup jsfilemapping
     autocmd!
     autocmd Filetype javascript,javascriptreact,typescript,typescriptreact inoremap <expr> <silent>; getline('.')[-1:] == ";" ? "\<Esc>A" : "\<Esc>A;"
 augroup END
+
+" Funcs for debugging 
+
+" show syntax highlighting groups for word under cursor
+nmap <leader>z :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+
