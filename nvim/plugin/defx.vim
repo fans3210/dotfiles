@@ -12,6 +12,19 @@ function! s:defx_mappings() abort
   nnoremap <silent><buffer><expr> l     <SID>defx_toggle_tree()                    " ????????????
   nnoremap <silent><buffer><expr> .     defx#do_action('toggle_ignored_files')     " ??????
   nnoremap <silent><buffer><expr> <C-r>  defx#do_action('redraw')
+
+  nnoremap <silent><buffer><expr> h
+  \ defx#do_action('cd', ['..'])
+  nnoremap <silent><buffer><expr> K
+  \ defx#do_action('new_directory')
+  nnoremap <silent><buffer><expr> N
+  \ defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> d
+  \ defx#do_action('remove')
+  nnoremap <silent><buffer><expr> r
+  \ defx#do_action('rename')
+  nnoremap <silent><buffer><expr> q
+  \ defx#do_action('quit')
 endfunction
 
 function! s:defx_toggle_tree() abort

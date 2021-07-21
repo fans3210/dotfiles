@@ -1,5 +1,4 @@
 set clipboard=unnamedplus
-set relativenumber
 set nohlsearch
 set hidden
 set noerrorbells
@@ -20,3 +19,6 @@ set scrolloff=8
 set cmdheight=1
 set updatetime=50
 set signcolumn=yes
+
+set ignorecase
+set smartcase
