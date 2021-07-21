@@ -13,6 +13,8 @@ set noswapfile
 set nobackup
 
 set incsearch
+set ignorecase
+set smartcase
 set termguicolors
 set scrolloff=8
 set cmdheight=1
