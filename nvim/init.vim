@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -25,8 +25,9 @@ Plug 'mhinz/vim-signify'
 call plug#end()
 
 set background=dark
-" colorscheme gruvbox
-colorscheme onehalfdark
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'soft'
+" colorscheme onehalfdark
 
 
 " gruvbox pmenu settings for autocompletion color since onehalfdark popup
