@@ -7,7 +7,7 @@ lua<<EOF
 local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { "node_modules", "%.svg" },
+    file_ignore_patterns = { "node_modules", "%.svg", "package%-lock.json" },
     mappings = {
       n = {
         ["q"] = actions.close
