@@ -129,5 +129,8 @@ EOF
 nnoremap <silent>K :Lspsaga hover_doc<CR>
 inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
 nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
+
 nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+
 nnoremap <silent>gr :Lspsaga rename<CR>

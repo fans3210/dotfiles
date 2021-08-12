@@ -46,7 +46,7 @@ hi PmenuThumb guibg=#7D6F64
 
 let mapleader = " "
 nnoremap <silent> Q <nop>
-nnoremap <Leader><CR> :source %<CR>
+nnoremap <Leader><CR> :source $MYVIMRC<CR>
 
 inoremap jk <Esc>
 
