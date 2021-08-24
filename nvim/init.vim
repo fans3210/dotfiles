@@ -16,6 +16,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'tpope/vim-commentary'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -26,7 +27,7 @@ call plug#end()
 
 set background=dark
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
+" let g:gruvbox_contrast_dark = 'soft'
 " colorscheme onehalfdark
 
 
