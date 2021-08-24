@@ -4,7 +4,19 @@ call defx#custom#option('_', {
       \ 'toggle': 1,
       \ 'resume': 1
       \ })
-nmap <silent> <Leader>e :Defx <cr>
+
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+
+nmap <silent> <Leader>e :Defx -columns=git:mark:filename:type<cr>
 
 autocmd FileType defx call s:defx_mappings()
 
