@@ -22,6 +22,8 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
+Plug 'kristijanhusak/defx-git'
+
 call plug#end()
 
 set background=dark
