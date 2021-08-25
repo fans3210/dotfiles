@@ -1,7 +1,10 @@
+" lua require("theprimeagen")
 nnoremap <c-p> <cmd>Telescope find_files<cr>
 nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+
+nnoremap <leader>vrc :lua require("theprimeagen.telescope").search_dotfiles()<cr>
 
 lua<<EOF
 local actions = require('telescope.actions')
