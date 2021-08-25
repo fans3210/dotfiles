@@ -1,16 +1,20 @@
 call plug#begin('~/.vim/plugged')
 
+" gruvbox dependencies
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/completion-nvim'
+
+" telescope dependencies
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
@@ -21,7 +25,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Plug 'alvan/vim-closetag'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'kristijanhusak/defx-git'
 
