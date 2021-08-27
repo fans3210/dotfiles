@@ -29,6 +29,8 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhinz/vim-signify'
 Plug 'kristijanhusak/defx-git'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 set background=dark
