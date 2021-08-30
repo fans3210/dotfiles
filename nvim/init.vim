@@ -5,7 +5,8 @@ Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
+Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/completion-nvim'
 
@@ -30,6 +31,8 @@ Plug 'mhinz/vim-signify'
 Plug 'kristijanhusak/defx-git'
 
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'akinsho/toggleterm.nvim'
+
 
 call plug#end()
 
