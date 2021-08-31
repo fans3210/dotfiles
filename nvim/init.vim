@@ -30,8 +30,10 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhinz/vim-signify'
 Plug 'kristijanhusak/defx-git'
 
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 Plug 'akinsho/toggleterm.nvim'
+
+" Plug 'vim-test/vim-test'
 
 
 call plug#end()
