@@ -2,6 +2,9 @@ Using neovim >=0.5 with native lsp
 Preinstalls:
 $ brew install tree-sitter luajit neovim tmux stow
 
+install python3 for defx
+install ripgrep for live grep of telescope
+
 Clone in dirctory ~/.config
 $ stow --ignore=DS_Store -v-S .
 
