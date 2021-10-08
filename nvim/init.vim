@@ -6,9 +6,7 @@ Plug 'npxbr/gruvbox.nvim'
 
 Plug 'neovim/nvim-lspconfig'
 " Plug 'glepnir/lspsaga.nvim'
-" Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
-" Plug 'tami5/lspsaga.nvim', { 'branch': 'main' }
-Plug 'rinx/lspsaga.nvim', { 'branch': 'main' }
+Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/completion-nvim'
 
