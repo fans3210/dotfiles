@@ -8,7 +8,13 @@ Plug 'neovim/nvim-lspconfig'
 " Plug 'glepnir/lspsaga.nvim'
 Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
+
 
 " telescope dependencies
 Plug 'nvim-lua/popup.nvim'
