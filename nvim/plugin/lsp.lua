@@ -1,4 +1,3 @@
-lua << EOF
 local nvim_lsp = require('lspconfig')
 
 local on_attach = function(client, bufnr)
@@ -29,17 +28,6 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities
 }
 
-
-
--- lspsaga
-local saga = require 'lspsaga'
-saga.init_lsp_saga {
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
-  border_style = "round",
-}
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -90,7 +78,6 @@ nvim_lsp.diagnosticls.setup {
       css = 'prettier',
       javascript = 'prettier',
       javascriptreact = 'prettier',
-      json = 'prettier',
       scss = 'prettier',
       less = 'prettier',
       typescript = 'prettier',
@@ -100,19 +87,45 @@ nvim_lsp.diagnosticls.setup {
     }
   }
 }
-EOF
 
-" lsp saga keymaps
-nnoremap <silent>K :Lspsaga hover_doc<CR>
-inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
-nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
 
-nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> <C-k> :Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
+-- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
+USER = vim.fn.expand('$USER')
 
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+local sumneko_root_path = ""
+local sumneko_binary = ""
 
-nnoremap <silent>gr :Lspsaga rename<CR>
+if vim.fn.has("mac") == 1 then
+    sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua-language-server"
+    sumneko_binary = "/Users/" .. USER .. "/.config/nvim/lua-language-server/bin/macOS/lua-language-server"
+elseif vim.fn.has("unix") == 1 then
+    sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua-language-server"
+    sumneko_binary = "/home/" .. USER .. "/.config/nvim/lua-language-server/bin/Linux/lua-language-server"
+else
+    print("Unsupported system for sumneko")
+end
+
+require'lspconfig'.sumneko_lua.setup {
+    on_attach = on_attach,
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+                -- Setup your lua path
+                path = vim.split(package.path, ';')
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {'vim'}
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+            }
+        }
+    }
+}
+
 
