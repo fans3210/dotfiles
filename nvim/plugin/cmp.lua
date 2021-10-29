@@ -15,7 +15,7 @@ cmp.setup({
         -- default has C-y to confirm too
         ['<CR>'] = cmp.mapping.confirm({select = true})
     },
-    sources = cmp.config.sources({{name = 'nvim_lsp'}}, {{name = 'buffer'}}),
+    sources = cmp.config.sources({{name = 'nvim_lsp'}}, {{name = 'buffer'}}, {{name = 'luasnip'}}),
     formatting = {
         format = function(entry, vim_item)
             vim_item.menu =
