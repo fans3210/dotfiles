@@ -13,7 +13,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'onsails/lspkind-nvim'
+" Plug 'onsails/lspkind-nvim'
 
 
 " telescope dependencies
