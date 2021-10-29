@@ -19,7 +19,8 @@ lua <<EOF
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        -- default has C-y to confirm too
+        ['<CR>'] = cmp.mapping.confirm({select = true}),
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
