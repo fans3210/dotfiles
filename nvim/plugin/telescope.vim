@@ -21,6 +21,7 @@ require('telescope').setup{
         ["<C-q>"] = actions.send_to_qflist,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
+        ["<C-x>"] = actions.delete_buffer,
       },
     },
     extensions = {
