@@ -8,13 +8,13 @@ Plug 'neovim/nvim-lspconfig'
 " Plug 'glepnir/lspsaga.nvim'
 Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'nvim-lua/completion-nvim'
+
+" completion
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
-" Plug 'onsails/lspkind-nvim'
 
 
 " telescope dependencies
@@ -29,15 +29,16 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" Plug 'alvan/vim-closetag'
-" Plug 'mattn/emmet-vim'
-Plug 'mhinz/vim-signify'
+" sign column
+" Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
+
 Plug 'kristijanhusak/defx-git'
 
-" Plug 'christoomey/vim-tmux-navigator'
 Plug 'akinsho/toggleterm.nvim'
 
 " Plug 'vim-test/vim-test'
