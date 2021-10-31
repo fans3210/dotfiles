@@ -41,3 +41,6 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Using prefix + I to install tmux plugins
 
+
+tmux-resurrect is cloned in home path, Below is the detailed path configured in .tmux.conf file
+run-shell ~/tmux-resurrect/resurrect.tmux
