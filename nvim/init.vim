@@ -43,6 +43,8 @@ Plug 'akinsho/toggleterm.nvim'
 
 " Plug 'vim-test/vim-test'
 
+Plug 'tpope/vim-surround'
+
 
 call plug#end()
 
