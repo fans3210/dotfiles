@@ -23,12 +23,12 @@ Plugin manger:
 $ sh -c 'curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-Install lanugage servers:
-$ npm install -g typescript typescript-language-server
-$ npm install -g diagnostic-languageserver
+Install lanugage servers and linters:
+$ npm install -g typescript typescript-language-server diagnostic-languageserver prettier_d_slim eslint_d prettier
 
-Install linters:
-$ npm i -g eslint_d prettier
+For Lua language server and prettiers, check:
+
+https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
 
 After tree-sitter plugin installed, check whether parser for each language installed, if not, config like eg:
 $ :TSInstall javascript
