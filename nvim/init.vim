@@ -3,6 +3,9 @@ call plug#begin('~/.vim/plugged')
 " gruvbox dependencies
 Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'akinsho/bufferline.nvim'
+
 
 Plug 'neovim/nvim-lspconfig'
 " Plug 'glepnir/lspsaga.nvim'
@@ -53,6 +56,9 @@ colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 'soft'
 " colorscheme onehalfdark
 
+" Overwrite gitsigns default color schemes set by gruvbox
+hi GitSignsAdd guifg=#8ec07c
+hi GitSignsChange guifg=#fabd2f
 
 " gruvbox pmenu settings for autocompletion color since onehalfdark popup
 " completion menu has color issue 
@@ -77,10 +83,11 @@ inoremap jk <Esc>
 nnoremap <C-S> :update<cr>
 inoremap <C-S> <Esc>:update<cr>
 
-augroup jsfilemapping 
-    autocmd!
-    autocmd Filetype javascript,javascriptreact,typescript,typescriptreact inoremap <expr> <silent>; getline('.')[-1:] == ";" ? "\<Esc>A" : "\<Esc>A;"
-augroup END
+" " insert semicolon at the end of line
+" augroup jsfilemapping 
+"     autocmd!
+"     autocmd Filetype javascript,javascriptreact,typescript,typescriptreact inoremap <expr> <silent>;; getline('.')[-1:] == ";" ? "\<Esc>A" : "\<Esc>A;"
+" augroup END
 
 " Funcs for debugging 
 
