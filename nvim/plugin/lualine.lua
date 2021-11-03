@@ -1,7 +1,7 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 lualine.setup {
-    options = {icons_enabled = true, theme = 'gruvbox', section_separators = {'', ''}, component_separators = {'', ''}, disabled_filetypes = {}},
+    options = {icons_enabled = true, theme = 'everforest', section_separators = {'', ''}, component_separators = {'', ''}, disabled_filetypes = {}},
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch'},

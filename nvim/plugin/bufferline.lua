@@ -1,4 +1,12 @@
-require("bufferline").setup {options = {numbers = 'ordinal'}}
+require("bufferline").setup {
+    options = {
+        numbers = function(opts)
+            return string.format('%s.', opts.ordinal)
+        end,
+        separator_style = 'thick'
+    }
+    -- highlights = {buffer_selected = {guifg = 'black', guibg = 'white', gui = "bold,italic"}}
+}
 
 vim.cmd [[
 nnoremap <silent><TAB> :BufferLineCycleNext<CR>
@@ -14,7 +22,7 @@ nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
 nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 
 
-nnoremap <silent><leader>xl <Cmd>BufferLineCloseLeft<CR>
-nnoremap <silent><leader>xr <Cmd>BufferLineCloseRight<CR>
+nnoremap <silent><leader>xh <Cmd>BufferLineCloseLeft<CR>
+nnoremap <silent><leader>xl <Cmd>BufferLineCloseRight<CR>
 nnoremap <silent><leader>xp <Cmd>BufferLinePickClose<CR>
 ]]

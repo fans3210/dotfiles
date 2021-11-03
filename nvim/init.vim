@@ -5,7 +5,10 @@ Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'akinsho/bufferline.nvim'
+Plug 'numtostr/BufOnly.nvim', { 'on': 'BufOnly' }
 
+" alternative colorscheme
+Plug 'sainnhe/everforest'
 
 Plug 'neovim/nvim-lspconfig'
 " Plug 'glepnir/lspsaga.nvim'
@@ -28,7 +31,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 
 Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -51,27 +55,24 @@ Plug 'tpope/vim-surround'
 
 call plug#end()
 
+" gruvbox colorscheme and settings except lualine
+" let g:gruvbox_contrast_dark = 'medium'
+" set background=dark
+" colorscheme gruvbox
+" gruvbox specific config Overwrite gitsigns default color schemes set by gruvbox
+" hi GitSignsAdd guifg=#8ec07c
+" hi GitSignsChange guifg=#fabd2f
+" hi GitSignsAddNr guifg=#8ec07c
+" hi GitSignsChangeNr guifg=#fabd2f
+" hi GitSignsAddLn guifg=#8ec07c
+" hi GitSignsChangeLn guifg=#fabd2f
+
+" everforest colorscheme and settings
+let g:everforest_background = 'soft'
+let g:everforest_diagnostic_virtual_text = 'colored'
 set background=dark
-colorscheme gruvbox
-" let g:gruvbox_contrast_dark = 'soft'
-" colorscheme onehalfdark
+colorscheme everforest
 
-" Overwrite gitsigns default color schemes set by gruvbox
-hi GitSignsAdd guifg=#8ec07c
-hi GitSignsChange guifg=#fabd2f
-
-" gruvbox pmenu settings for autocompletion color since onehalfdark popup
-" completion menu has color issue 
-"
-" Pmenu          xxx ctermfg=0 ctermbg=13 guifg=#EBDBB2 guibg=#4F4945
-" PmenuSel       xxx ctermfg=242 ctermbg=0 gui=bold guifg=#4F4945 guibg=#83A598
-" PmenuSbar      xxx ctermbg=248 guibg=#4F4945
-" PmenuThumb     xxx ctermbg=15 guibg=#7D6F64
-
-hi Pmenu guifg=#EBDBB2 guibg=#4F4945
-hi PmenuSbar guibg=#4F4945
-hi PmenuSel guifg=#4F4945 guibg=#83A598
-hi PmenuThumb guibg=#7D6F64 
 
 
 let mapleader = " "
