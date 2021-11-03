@@ -1,9 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
 " gruvbox dependencies
-Plug 'rktjmp/lush.nvim'
-Plug 'npxbr/gruvbox.nvim'
+" Plug 'rktjmp/lush.nvim'
+" Plug 'npxbr/gruvbox.nvim'
+
 Plug 'norcalli/nvim-colorizer.lua'
+
+" top tabs
 Plug 'akinsho/bufferline.nvim'
 Plug 'numtostr/BufOnly.nvim', { 'on': 'BufOnly' }
 
@@ -22,7 +25,6 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 
-
 " telescope dependencies
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -38,20 +40,23 @@ Plug 'tpope/vim-commentary'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 Plug 'tpope/vim-fugitive'
+
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kristijanhusak/defx-git'
 
 " sign column
 " Plug 'mhinz/vim-signify'
 Plug 'lewis6991/gitsigns.nvim'
 
-Plug 'kristijanhusak/defx-git'
 
 Plug 'akinsho/toggleterm.nvim'
 
 " Plug 'vim-test/vim-test'
 
 Plug 'tpope/vim-surround'
+Plug 'folke/todo-comments.nvim'
 
+Plug 'folke/trouble.nvim'
 
 call plug#end()
 
