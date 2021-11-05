@@ -3,6 +3,15 @@ require("bufferline").setup {
         numbers = function(opts)
             return string.format('%s.', opts.ordinal)
         end,
+        -- diagnostics = 'nvim_lsp',
+        -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+        --     local s = " "
+        --     for e, n in pairs(diagnostics_dict) do
+        --         local sym = e == "error" and " " or (e == "warning" and " " or "")
+        --         s = s .. n .. sym
+        --     end
+        --     return s
+        -- end,
         separator_style = 'thick'
     }
     -- highlights = {buffer_selected = {guifg = 'black', guibg = 'white', gui = "bold,italic"}}
@@ -11,6 +20,10 @@ require("bufferline").setup {
 vim.cmd [[
 nnoremap <silent><TAB> :BufferLineCycleNext<CR>
 nnoremap <silent><S-TAB> :BufferLineCyclePrev<CR>
+
+nnoremap <silent><C-l> :BufferLineMoveNext<CR>
+nnoremap <silent><C-h> :BufferLineMovePrev<CR>
+
 nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
 nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
 nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
