@@ -40,6 +40,12 @@ function! s:defx_mappings() abort
   \ defx#do_action('rename')
   nnoremap <silent><buffer><expr> q
   \ defx#do_action('quit')
+  nnoremap <silent><buffer><expr> c
+  \ defx#do_action('copy')
+  nnoremap <silent><buffer><expr> c
+  \ defx#do_action('move')
+  nnoremap <silent><buffer><expr> p
+  \ defx#do_action('paste')
 endfunction
 
 function! s:defx_toggle_tree() abort
