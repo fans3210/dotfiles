@@ -32,7 +32,7 @@ nvim_lsp.diagnosticls.setup {
         linters = {
             eslint = {
                 command = 'eslint_d',
-                rootPatterns = {'.git', 'package.json', '.eslintrc'},
+                rootPatterns = {'package.json', '.eslintrc'},
                 debounce = 100,
                 args = {'--stdin', '--stdin-filename', '%filepath', '--format', 'json'},
                 sourceName = 'eslint_d',
@@ -53,11 +53,11 @@ nvim_lsp.diagnosticls.setup {
             eslint_d = {
                 command = 'eslint_d',
                 args = {'--stdin', '--stdin-filename', '%filename', '--fix-to-stdout'},
-                rootPatterns = {'.git', 'package.json', '.eslintrc'}
+                rootPatterns = {'package.json', '.eslintrc'}
             },
             prettier = {
                 command = 'prettier_d_slim',
-                rootPatterns = {'.git', 'package.json', '.prettierrc'},
+                rootPatterns = {'package.json', '.prettierrc'},
                 args = {'--stdin', '--stdin-filepath', '%filename'}
             }
         },
