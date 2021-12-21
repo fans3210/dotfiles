@@ -42,7 +42,7 @@ function! s:defx_mappings() abort
   \ defx#do_action('quit')
   nnoremap <silent><buffer><expr> c
   \ defx#do_action('copy')
-  nnoremap <silent><buffer><expr> c
+  nnoremap <silent><buffer><expr> m
   \ defx#do_action('move')
   nnoremap <silent><buffer><expr> p
   \ defx#do_action('paste')

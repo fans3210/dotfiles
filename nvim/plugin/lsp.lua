@@ -10,6 +10,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
     -- Format on save
+    if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
     if client.resolved_capabilities.document_formatting then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -31,7 +32,7 @@ nvim_lsp.diagnosticls.setup {
         linters = {
             eslint = {
                 command = 'eslint_d',
-                rootPatterns = {'.git'},
+                rootPatterns = {'.git', 'package.json', '.eslintrc'},
                 debounce = 100,
                 args = {'--stdin', '--stdin-filename', '%filepath', '--format', 'json'},
                 sourceName = 'eslint_d',
@@ -49,11 +50,14 @@ nvim_lsp.diagnosticls.setup {
         },
         filetypes = {javascript = 'eslint', javascriptreact = 'eslint', typescript = 'eslint', typescriptreact = 'eslint'},
         formatters = {
-            eslint_d = {command = 'eslint_d', args = {'--stdin', '--stdin-filename', '%filename', '--fix-to-stdout'}, rootPatterns = {'.git'}},
+            eslint_d = {
+                command = 'eslint_d',
+                args = {'--stdin', '--stdin-filename', '%filename', '--fix-to-stdout'},
+                rootPatterns = {'.git', 'package.json', '.eslintrc'}
+            },
             prettier = {
                 command = 'prettier_d_slim',
-                rootPatterns = '.git',
-                -- requiredFiles: { 'prettier.config.js' },
+                rootPatterns = {'.git', 'package.json', '.prettierrc'},
                 args = {'--stdin', '--stdin-filepath', '%filename'}
             }
         },
