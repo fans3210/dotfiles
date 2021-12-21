@@ -15,7 +15,8 @@ Plug 'sainnhe/everforest'
 
 Plug 'neovim/nvim-lspconfig'
 " Plug 'glepnir/lspsaga.nvim'
-Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
+Plug 'tami5/lspsaga.nvim'
+" Plug 'jasonrhansen/lspsaga.nvim', {'branch': 'finder-preview-fixes'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " completion
