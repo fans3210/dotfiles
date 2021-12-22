@@ -16,7 +16,7 @@ call defx#custom#column('git', 'indicators', {
   \ 'Unknown'   : '?'
   \ })
 
-nmap <silent> <Leader>e :Defx -search=`expand('%:p')` `getcwd()` -columns=git:mark:indent:icon:filename:type<cr>
+nmap <silent> <Leader>e :Defx -search-recursive=`expand('%:p')` `getcwd()` -columns=git:mark:indent:icon:filename:type<cr>
 " nmap <silent> <Leader>e :Defx<cr>
 
 autocmd FileType defx call s:defx_mappings()
