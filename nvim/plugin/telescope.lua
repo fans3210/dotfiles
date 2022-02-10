@@ -6,11 +6,11 @@ require('telescope').setup {
         mappings = {
             n = {["q"] = actions.close},
             i = {
-                ["<C-p>"] = actions.close,
-                ["<C-q>"] = actions.send_to_qflist,
-                ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous,
-                ["<C-x>"] = actions.delete_buffer
+                ["<C-c>"] = actions.close,
+                ["<C-q>"] = actions.send_to_qflist
+                -- ["<C-j>"] = actions.move_selection_next,
+                -- ["<C-k>"] = actions.move_selection_previous,
+                -- ["<C-x>"] = actions.delete_buffer
             }
         },
         extensions = {fzf = {override_generic_sort = false, override_file_sorter = true, case_mode = "smart_case"}}
