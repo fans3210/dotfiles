@@ -14,6 +14,7 @@ Plug 'numtostr/BufOnly.nvim', { 'on': 'BufOnly' }
 Plug 'sainnhe/everforest'
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'tami5/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 

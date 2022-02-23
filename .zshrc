@@ -74,6 +74,7 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-autosuggestions	
+  vi-mode
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -104,11 +105,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # .zshrc
-alias vim="~/downloads/nvim.appimage"
+alias vim="~/downloads/nvim0.6/nvim.appimage"
 alias python="python3"
 export PATH=~/.npm-global/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 autoload -U promptinit; promptinit
 prompt pure
 
 source /home/developer/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+alias luamake=/home/developer/.config/lua-language-server/3rd/luamake/luamake

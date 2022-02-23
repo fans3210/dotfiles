@@ -1,4 +1,4 @@
-local nvim_lsp = require('lspconfig')
+local lsp_installer = require "nvim-lsp-installer"
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
@@ -10,7 +10,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
     -- Format on save
-    if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
+    -- if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
     if client.resolved_capabilities.document_formatting then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]
@@ -22,11 +22,40 @@ end
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- TypeScript
-nvim_lsp.tsserver.setup {on_attach = on_attach, capabilities = capabilities}
+local lua_opts = {
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {'vim'}
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+            }
+        }
+    }
+}
 
-nvim_lsp.diagnosticls.setup {
-    on_attach = on_attach,
+local efm_opts = {
+    init_options = {documentFormatting = true},
+    filetypes = {"lua"},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {
+                {
+                    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb",
+                    formatStdin = true
+                }
+            }
+        }
+    }
+}
+
+local tsserver_opts = {}
+
+local diagnosticls_opts = {
     filetypes = {'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc'},
     init_options = {
         linters = {
@@ -73,60 +102,15 @@ nvim_lsp.diagnosticls.setup {
             markdown = 'prettier'
         }
     }
+
 }
 
--- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
-USER = vim.fn.expand('$USER')
+lsp_installer.on_server_ready(function(server)
+    local opts = {on_attach = on_attach, capabilities = capabilities}
+    if server.name == 'sumneko_lua' then opts = vim.tbl_deep_extend("force", lua_opts, opts) end
+    if server.name == 'efm' then opts = vim.tbl_deep_extend("force", efm_opts, opts) end
+    if server.name == 'tsserver' then opts = vim.tbl_deep_extend("force", tsserver_opts, opts) end
+    if server.name == 'diagnosticls' then opts = vim.tbl_deep_extend("force", diagnosticls_opts, opts) end
+    server:setup(opts)
+end)
 
-local sumneko_root_path = ""
-local sumneko_binary = ""
-
-if vim.fn.has("mac") == 1 then
-    sumneko_root_path = "/Users/" .. USER .. "/.config/lua-language-server"
-    sumneko_binary = "/Users/" .. USER .. "/.config/lua-language-server/bin/macOS/lua-language-server"
-elseif vim.fn.has("unix") == 1 then
-    sumneko_root_path = "/home/" .. USER .. "/.config/lua-language-server"
-    sumneko_binary = "/home/" .. USER .. "/.config/lua-language-server/bin/Linux/lua-language-server"
-else
-    print("Unsupported system for sumneko")
-end
-
-nvim_lsp.sumneko_lua.setup {
-    on_attach = on_attach,
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-                -- Setup your lua path
-                path = vim.split(package.path, ';')
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {'vim'}
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
-            }
-        }
-    }
-}
-
-nvim_lsp.efm.setup {
-    on_attach = on_attach,
-    init_options = {documentFormatting = true},
-    filetypes = {"lua"},
-    settings = {
-        rootMarkers = {".git/"},
-        languages = {
-            lua = {
-                {
-                    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb",
-                    formatStdin = true
-                }
-            }
-        }
-    }
-}
