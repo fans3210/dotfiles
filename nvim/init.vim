@@ -51,7 +51,7 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'akinsho/toggleterm.nvim'
 
-" Plug 'vim-test/vim-test'
+Plug 'vim-test/vim-test'
 
 Plug 'tpope/vim-surround'
 Plug 'folke/todo-comments.nvim'
