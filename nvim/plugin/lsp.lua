@@ -55,9 +55,9 @@ local efm_opts = {
 
 local tsserver_opts = {}
 local pyright_opts = {}
-local gopls_opts = {
-    settings = {gopls = {analyses = {unusedparams = true, shadow = true}, staticcheck = true}}
-}
+local gopls_opts = {settings = {gopls = {analyses = {unusedparams = true, shadow = true}, staticcheck = true}}}
+local jdtls_opts = {}
+
 local diagnosticls_opts = {
     filetypes = {'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc'},
     init_options = {
@@ -115,6 +115,7 @@ lsp_installer.on_server_ready(function(server)
     if server.name == 'diagnosticls' then opts = vim.tbl_deep_extend("force", diagnosticls_opts, opts) end
     if server.name == 'pyright' then opts = vim.tbl_deep_extend("force", pyright_opts, opts) end
     if server.name == 'gopls' then opts = vim.tbl_deep_extend("force", gopls_opts, opts) end
+    if server.name == 'jdtls' then opts = vim.tbl_deep_extend("force", jdtls_opts, opts) end
     server:setup(opts)
 end)
 
