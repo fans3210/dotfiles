@@ -11,11 +11,15 @@ local on_attach = function(client, bufnr)
 
     -- Format on save
     -- if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
+    -- if client.name == 'diagnosticls' then client.resolved_capabilities.document_formatting = false end
+
     if client.resolved_capabilities.document_formatting then
-        vim.api.nvim_command [[augroup Format]]
-        vim.api.nvim_command [[autocmd! * <buffer>]]
-        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-        vim.api.nvim_command [[augroup END]]
+        -- vim.cmd [[
+        --     augroup Format
+        --         autocmd!
+        --         autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+        --     augroup END
+        -- ]]
     end
 end
 

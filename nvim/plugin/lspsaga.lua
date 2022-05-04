@@ -11,4 +11,4 @@ vim.api.nvim_set_keymap('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>',
 vim.api.nvim_set_keymap('n', '<leader>ca', ':Lspsaga code_action<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<leader>ca', ':Lspsaga range_code_action<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'gr', ':Lspsaga rename<CR>', {noremap = true, silent = true})
-
+vim.api.nvim_set_keymap('n', 'gp', ':Lspsage preview_definition<CR>', {noremap = true, silent = true})
