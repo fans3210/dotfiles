@@ -10,16 +10,16 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
     -- Format on save
-    -- if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
+    if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
     -- if client.name == 'diagnosticls' then client.resolved_capabilities.document_formatting = false end
 
     if client.resolved_capabilities.document_formatting then
-        -- vim.cmd [[
-        --     augroup Format
-        --         autocmd!
-        --         autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-        --     augroup END
-        -- ]]
+        vim.cmd [[
+            augroup Format
+                autocmd!
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+            augroup END
+        ]]
     end
 end
 
