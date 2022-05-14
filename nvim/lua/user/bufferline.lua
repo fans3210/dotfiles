@@ -21,8 +21,8 @@ vim.cmd [[
 nnoremap <silent><Tab> :BufferLineCycleNext<CR>
 nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 
-nnoremap <silent><C-l> :BufferLineMoveNext<CR>
-nnoremap <silent><C-h> :BufferLineMovePrev<CR>
+nnoremap <silent><S-l> :BufferLineMoveNext<CR>
+nnoremap <silent><S-h> :BufferLineMovePrev<CR>
 
 nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
 nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
