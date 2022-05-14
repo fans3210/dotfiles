@@ -13,7 +13,6 @@ local on_attach = function(client, bufnr)
 
     -- Format on save
     if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
-    -- if client.name == 'diagnosticls' then client.resolved_capabilities.document_formatting = false end
 
     -- if client.resolved_capabilities.document_formatting then
     --     vim.cmd [[
