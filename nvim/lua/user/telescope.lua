@@ -2,6 +2,12 @@ local actions = require 'telescope.actions'
 
 require('telescope').setup {
     defaults = {
+        layout_config = {
+            horizontal = {
+                width = 0.95,
+                height = 0.95,
+            },
+        },
         file_ignore_patterns = {"node_modules", "package%-lock.json"},
         mappings = {
             n = {["q"] = actions.close},

@@ -5,7 +5,7 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
--- general 
+-- general
 keymap("n", "Q", "<nop>", opts)
 keymap("n", "<leader><CR>", ":luafile %<CR>", opts)
 keymap("i", "jk", "<Esc>", opts)

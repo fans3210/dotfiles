@@ -1,4 +1,3 @@
-
 local options = {
     clipboard = "unnamedplus",
     hlsearch = false,
@@ -25,4 +24,3 @@ local options = {
 }
 
 for k, v in pairs(options) do vim.opt[k] = v end
-

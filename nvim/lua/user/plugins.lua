@@ -34,36 +34,95 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
 
-    use 'norcalli/nvim-colorizer.lua'
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require 'user.colorizer'
+        end
+    }
 
-    -- top tabs
-    use 'akinsho/bufferline.nvim'
-    use {"numtostr/BufOnly.nvim", cmd = "BufOnly"}
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require 'user.bufferline'
+
+        end
+    }
+    use {
+        "numtostr/BufOnly.nvim",
+        cmd = "BufOnly",
+        config = function()
+            require 'user.bufonly'
+
+        end
+    }
 
     -- alternative colorscheme
     use 'sainnhe/everforest'
 
-    use 'neovim/nvim-lspconfig'
+    use {
+        'neovim/nvim-lspconfig',
+        config = function()
+            require 'user.lsp'
+        end
+    }
     use 'williamboman/nvim-lsp-installer'
-    use 'tami5/lspsaga.nvim'
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-
+    use {
+        'tami5/lspsaga.nvim',
+        config = function()
+            require 'user.lspsaga'
+        end
+    }
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        config = function()
+            require 'user.tree-sitter'
+        end
+    }
     -- completion
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/nvim-cmp'
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function()
+            require 'user.cmp'
+        end
+    }
 
-    -- telescope dependencies
-    use 'nvim-telescope/telescope.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        config = function()
+            require 'user.telescope'
+        end
+    }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
-    use 'kyazdani42/nvim-web-devicons'
-    use 'hoob3rt/lualine.nvim'
-    use 'windwp/nvim-autopairs'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function()
+            require 'user.lualine'
+        end
+    }
 
-    use 'tpope/vim-commentary'
+    use {
+        'windwp/nvim-autopairs',
+        config = function()
+            require 'user.autopairs'
+        end
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require 'user.comments'
+        end
+    }
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
     use 'tpope/vim-fugitive'
@@ -72,16 +131,37 @@ return packer.startup(function(use)
     use 'kristijanhusak/defx-git'
 
     -- sign column
-    use 'lewis6991/gitsigns.nvim'
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require 'user.gitsigns'
 
-    use 'akinsho/toggleterm.nvim'
+        end
+    }
 
-    -- Plug 'vim-test/vim-test'
+    use {
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require 'user.toggleterm'
+
+        end
+    }
 
     use 'tpope/vim-surround'
-    use 'folke/todo-comments.nvim'
+    use {
+        'folke/todo-comments.nvim',
+        config = function()
+            require 'user.todocomments'
 
-    use 'folke/trouble.nvim'
+        end
+    }
+
+    use {
+        'folke/trouble.nvim',
+        config = function()
+            require 'user.trouble'
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
