@@ -12,7 +12,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
     -- Format on save
-    -- if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
+    if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
     -- if client.name == 'diagnosticls' then client.resolved_capabilities.document_formatting = false end
 
     if client.resolved_capabilities.document_formatting then
@@ -27,7 +27,6 @@ end
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
 local lua_opts = {
     settings = {
         Lua = {
@@ -64,9 +63,13 @@ local diagnostics = null_ls.builtins.diagnostics
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 -- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup {
+    on_attach = on_attach,
     debug = false,
     sources = {
-        formatting.prettier.with { extra_filetypes = { "toml", "solidity" }, extra_args = { "-semi", "--single-quote", "--jsx-single-quote" } },
+        formatting.prettier.with {
+            extra_filetypes = { "toml", "solidity" },
+            extra_args = { "--single-quote", "--jsx-single-quote" }
+        },
         formatting.black.with { extra_args = { "--fast" } }, formatting.stylua,
         diagnostics.eslint,
     }

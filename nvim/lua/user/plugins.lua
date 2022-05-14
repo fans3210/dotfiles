@@ -68,7 +68,12 @@ return packer.startup(function(use)
             require 'user.lspsaga'
         end
     }
-    use "jose-elias-alvarez/null-ls.nvim"
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require 'user.lsp'
+        end
+    }
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
