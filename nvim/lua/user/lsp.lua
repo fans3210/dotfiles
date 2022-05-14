@@ -15,14 +15,16 @@ local on_attach = function(client, bufnr)
     if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
     -- if client.name == 'diagnosticls' then client.resolved_capabilities.document_formatting = false end
 
-    if client.resolved_capabilities.document_formatting then
-        vim.cmd [[
-            augroup Format
-                autocmd!
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-            augroup END
-        ]]
-    end
+    -- if client.resolved_capabilities.document_formatting then
+    --     vim.cmd [[
+    --         augroup Format
+    --             autocmd!
+    --             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+    --         augroup END
+    --     ]]
+    -- end
+    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_seq_sync()' ]]
+    buf_set_keymap('n', '<leader>ff', ':Format<CR>', opts)
 end
 
 -- Set up completion using nvim_cmp with LSP source
