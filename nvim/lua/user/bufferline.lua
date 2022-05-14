@@ -18,8 +18,8 @@ require("bufferline").setup {
 }
 
 vim.cmd [[
-nnoremap <silent><TAB> :BufferLineCycleNext<CR>
-nnoremap <silent><S-TAB> :BufferLineCyclePrev<CR>
+nnoremap <silent><S-l> :BufferLineCycleNext<CR>
+nnoremap <silent><S-h> :BufferLineCyclePrev<CR>
 
 nnoremap <silent><C-l> :BufferLineMoveNext<CR>
 nnoremap <silent><C-h> :BufferLineMovePrev<CR>
@@ -38,4 +38,5 @@ nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 nnoremap <silent><leader>xh <Cmd>BufferLineCloseLeft<CR>
 nnoremap <silent><leader>xl <Cmd>BufferLineCloseRight<CR>
 nnoremap <silent><leader>xp <Cmd>BufferLinePickClose<CR>
+nnoremap <silent><leader>xx <Cmd>BufOnly<CR>
 ]]

@@ -43,21 +43,14 @@ return packer.startup(function(use)
 
     use {
         'akinsho/bufferline.nvim',
-        tag = "v2.*",
+        -- tag = "v2.*",
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
             require 'user.bufferline'
 
         end
     }
-    use {
-        "numtostr/BufOnly.nvim",
-        cmd = "BufOnly",
-        config = function()
-            require 'user.bufonly'
-
-        end
-    }
+    use {"numtostr/BufOnly.nvim", cmd = "BufOnly"}
 
     -- alternative colorscheme
     use 'sainnhe/everforest'

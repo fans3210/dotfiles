@@ -1,4 +1,4 @@
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -17,7 +17,3 @@ keymap("i", "<C-S>", "<Esc>:update<cr>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
--- Naviagate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
