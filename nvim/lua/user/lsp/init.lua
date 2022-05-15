@@ -43,7 +43,15 @@ local lua_opts = {
 }
 
 local tsserver_opts = {}
-local pyright_opts = {}
+local pyright_opts = {
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "off",
+            },
+        },
+    },
+}
 local gopls_opts = { settings = { gopls = { analyses = { unusedparams = true, shadow = true }, staticcheck = true } } }
 
 lsp_installer.on_server_ready(function(server)

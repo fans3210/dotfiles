@@ -115,7 +115,7 @@ return packer.startup(function(use)
             require 'user.autopairs'
         end
     }
-
+    use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
     use {
         'numToStr/Comment.nvim',
         config = function()
