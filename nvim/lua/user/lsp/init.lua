@@ -11,19 +11,18 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
-    -- Format on save
     if client.name == 'tsserver' then client.resolved_capabilities.document_formatting = false end
 
-    -- if client.resolved_capabilities.document_formatting then
-    --     vim.cmd [[
-    --         augroup Format
-    --             autocmd!
-    --             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-    --         augroup END
-    --     ]]
-    -- end
+    -- Format on save
+
+    vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handler").toggle_format_on_save()' ]]
+
+    -- formatting command
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_seq_sync()' ]]
     buf_set_keymap('n', '<leader>ff', ':Format<CR>', opts)
+
+    -- document hightlight
+    require 'illuminate'.on_attach(client)
 end
 
 -- Set up completion using nvim_cmp with LSP source
@@ -71,7 +70,8 @@ null_ls.setup {
             extra_filetypes = { "toml", "solidity" },
             extra_args = { "--single-quote", "--jsx-single-quote" }
         },
-        formatting.black.with { extra_args = { "--fast" } }, formatting.stylua,
+        formatting.black.with { extra_args = { "--fast" } },
+        -- formatting.stylua,
         diagnostics.eslint,
     }
 }

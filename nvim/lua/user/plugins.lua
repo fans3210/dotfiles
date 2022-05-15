@@ -65,7 +65,7 @@ return packer.startup(function(use)
     use {
         'tami5/lspsaga.nvim',
         config = function()
-            require 'user.lspsaga'
+            require 'user.lsp.lspsaga'
         end
     }
     use {
@@ -161,6 +161,9 @@ return packer.startup(function(use)
             require 'user.trouble'
         end
     }
+
+    --document highlight
+    use "RRethy/vim-illuminate"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
