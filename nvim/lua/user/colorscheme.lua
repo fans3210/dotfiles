@@ -1,8 +1,9 @@
 vim.g.everforest_background = 'soft'
 vim.g.everforest_diagnostic_virtual_text = 'colored'
-vim.opt.background = 'dark';
 
+vim.opt.background = 'dark';
 local colorscheme = "everforest"
+-- local colorscheme = 'gruvbox'
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

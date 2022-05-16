@@ -54,14 +54,24 @@ return packer.startup(function(use)
 
     -- alternative colorscheme
     use 'sainnhe/everforest'
+    use { "ellisonleao/gruvbox.nvim" }
 
+    -- use {
+    --     'neovim/nvim-lspconfig',
+    --     config = function()
+    --         require 'user.lsp'
+    --     end
+    -- }
     use {
-        'neovim/nvim-lspconfig',
-        config = function()
-            require 'user.lsp'
-        end
+        'williamboman/nvim-lsp-installer',
+        {
+            'neovim/nvim-lspconfig',
+            config = function()
+                require 'user.lsp.installer'
+                require 'user.lsp.servers'
+            end
+        }
     }
-    use 'williamboman/nvim-lsp-installer'
     use {
         'tami5/lspsaga.nvim',
         config = function()
@@ -71,7 +81,7 @@ return packer.startup(function(use)
     use {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-            require 'user.lsp'
+            require 'user.lsp.null-ls'
         end
     }
     use {
