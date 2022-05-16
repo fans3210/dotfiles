@@ -55,6 +55,7 @@ return packer.startup(function(use)
     -- alternative colorscheme
     use 'sainnhe/everforest'
     use { "ellisonleao/gruvbox.nvim" }
+    use 'sainnhe/gruvbox-material'
 
     -- use {
     --     'neovim/nvim-lspconfig',

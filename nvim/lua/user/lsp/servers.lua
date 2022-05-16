@@ -39,3 +39,16 @@ lspconfig.pyright.setup(pyright_opts)
 local gopls_opts = { settings = { gopls = { analyses = { unusedparams = true, shadow = true }, staticcheck = true } } }
 gopls_opts = vim.tbl_deep_extend('force', gopls_opts, opts)
 lspconfig.gopls.setup(gopls_opts)
+
+
+local bashls_opts = {}
+bashls_opts = vim.tbl_deep_extend('force', bashls_opts, opts)
+lspconfig.bashls.setup(bashls_opts)
+
+local cssls_opts = {}
+cssls_opts = vim.tbl_deep_extend('force', cssls_opts, opts)
+lspconfig.cssls.setup(cssls_opts)
+
+local cssmodules_ls_opts = {}
+cssmodules_ls_opts = vim.tbl_deep_extend('force', cssmodules_ls_opts, opts)
+lspconfig.cssmodules_ls.setup(cssmodules_ls_opts)
