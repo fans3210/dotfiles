@@ -4,7 +4,7 @@ function M.enable_format_on_save()
     vim.cmd [[
     augroup format_on_save
       autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.formatting_seq_sync()
+      autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
     augroup end
   ]]
     vim.notify "Enabled format on save"
@@ -50,7 +50,7 @@ M.on_attach = function(client, bufnr)
     require 'user.lsp.handlers'.enable_format_on_save()
 
     -- formatting command
-    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_seq_sync()' ]]
+    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
     buf_set_keymap('n', '<leader>ff', ':Format<CR>', opts)
 
     -- document hightlight
