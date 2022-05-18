@@ -10,6 +10,12 @@ local diagnostics = null_ls.builtins.diagnostics
 -- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup {
     on_attach = handlers.on_attach,
+    should_attach = function(bufnr)
+        local bufname = vim.api.nvim_buf_get_name(bufnr)
+        local should = true
+        if bufname:find('pwi-platform-gds', 1, true) then should = false end
+        return should
+    end,
     debug = true,
     sources = {
         formatting.prettierd.with {
