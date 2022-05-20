@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use 'sainnhe/everforest'
     use { "ellisonleao/gruvbox.nvim" }
     use 'sainnhe/gruvbox-material'
+    use 'b4skyx/serenade'
 
     -- use {
     --     'neovim/nvim-lspconfig',
