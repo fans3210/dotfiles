@@ -3,6 +3,7 @@ vim.g.everforest_diagnostic_virtual_text = 'colored'
 -- vim.g.gruvbox_material_palette = 'material'
 
 -- vim.g.gruvbox_material_background = 'medium' -- hard, medium, soft
+vim.g.everforest_background = 'soft'
 
 vim.opt.background = 'dark';
 local colorscheme = "everforest"

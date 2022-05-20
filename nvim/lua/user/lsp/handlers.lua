@@ -53,7 +53,8 @@ M.on_attach = function(client, bufnr)
     end
 
     -- Format on save
-    vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
+    vim.cmd [[ command! FormatOn execute 'lua require("user.lsp.handlers").enable_format_on_save()' ]]
+    vim.cmd [[ command! FormatOff execute 'lua require("user.lsp.handlers").disable_format_on_save()' ]]
     -- by default enable format on save
     M.enable_format_on_save_silent()
 
