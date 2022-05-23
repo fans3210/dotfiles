@@ -80,6 +80,15 @@ return packer.startup(function(use)
             require 'user.lsp.lspsaga'
         end
     }
+
+    use {
+        'filipdutescu/renamer.nvim',
+        branch = 'master',
+        config = function()
+            require 'user.renamer'
+        end
+    }
+
     use {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
