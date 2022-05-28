@@ -8,7 +8,7 @@ require('telescope').setup {
                 height = 0.95,
             },
         },
-        file_ignore_patterns = { "node_modules", "package%-lock.json" },
+        file_ignore_patterns = { ".git/", "node_modules", "package%-lock.json" },
         mappings = {
             n = { ["q"] = actions.close },
             i = {
@@ -34,4 +34,4 @@ vim.api.nvim_set_keymap('n', ';;', [[<cmd>Telescope help_tags<CR>]], { noremap =
 vim.api.nvim_set_keymap('n', '<leader>fc', [[<cmd>lua require'telescope.builtin'.quickfix()<CR>]], { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>vrc', [[<cmd>lua require'theprimeagen.telescope'.search_dotfiles()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>hh', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hf', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", { noremap = true, silent = true })
