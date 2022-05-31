@@ -25,7 +25,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 
 vim.api.nvim_set_keymap('n', '<c-p>', [[<cmd>lua require'telescope.builtin'.find_files()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', ';r', [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]], { noremap = true, silent = true })
 
 -- double slash(escaped)
 vim.api.nvim_set_keymap('n', '\\\\', [[<cmd>Telescope buffers<CR>]], { noremap = true, silent = true })
