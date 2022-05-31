@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/Users/fans3210/Projects/NUSISS/dataAlgoPlatform/webapp/server'
-let g:netrw_dirhist_3='/Users/fans3210/Projects/NUSISS/dataAlgoPlatform/webapp'
-let g:netrw_dirhist_2='/Users/fans3210/Projects/NUSISS/dataAlgoPlatform'
-let g:netrw_dirhist_1='/Users/fans3210/.config/nvim'

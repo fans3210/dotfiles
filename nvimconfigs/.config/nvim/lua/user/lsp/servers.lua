@@ -36,7 +36,20 @@ local pyright_opts = {
 pyright_opts = vim.tbl_deep_extend('force', pyright_opts, opts)
 lspconfig.pyright.setup(pyright_opts)
 
-local gopls_opts = { settings = { gopls = { analyses = { unusedparams = true, shadow = true }, staticcheck = true } } }
+-- local gopls_opts = { settings = { gopls = { analyses = { unusedparams = true, shadow = true }, staticcheck = true } } }
+local gopls_opts = {
+    cmd = { "gopls", "serve" },
+    filetypes = { "go", "gomod" },
+    root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+        },
+    },
+}
 gopls_opts = vim.tbl_deep_extend('force', gopls_opts, opts)
 lspconfig.gopls.setup(gopls_opts)
 
