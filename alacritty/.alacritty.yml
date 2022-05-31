@@ -1,0 +1,116 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+#
+# env:
+# TERM: alacritty
+# Font configuration
+font:
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Light
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+  italic:
+    family: Hack Nerd Font Mono
+    styje: Italic
+  bold_italic:
+    family: Hack Nerd Font Mono
+    style: Bold Italic
+  size: 13.0
+  offset:
+    x: 0
+    y: 2
+  use_thin_strokes: true
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+  # Startup Mode (changes require restart)
+  startup_mode: SimpleFullScreen
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Define
+schemes:
+  everforest_dark_hard: &everforest_dark_hard
+    primary:
+      background: "#2b3339"
+      foreground: "#d3c6aa"
+    normal:
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
+    bright:
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
+  everforest_dark_medium: &everforest_dark_medium
+    primary:
+      background: "#2f383e"
+      foreground: "#d3c6aa"
+    normal:
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
+    bright:
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
+  everforest_dark_soft: &everforest_dark_soft
+    primary:
+      background: "#323d43"
+      foreground: "#d3c6aa"
+    normal:
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
+    bright:
+      black: "#4b565c"
+      red: "#e67e80"
+      green: "#a7c080"
+      yellow: "#dbbc7f"
+      blue: "#7fbbb3"
+      magenta: "#d699b6"
+      cyan: "#83c092"
+      white: "#d3c6aa"
+
+# Apply
+colors: *everforest_dark_soft
+
+# When true, bold text is drawn using the bright variant of colors.
+draw_bold_text_with_bright_colors: false
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: false
