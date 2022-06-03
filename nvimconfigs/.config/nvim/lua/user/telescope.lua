@@ -1,4 +1,6 @@
 local actions = require 'telescope.actions'
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
 
 require('telescope').setup {
     defaults = {
@@ -24,13 +26,13 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 
-vim.api.nvim_set_keymap('n', '<c-p>', [[<cmd>lua require'telescope.builtin'.find_files()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>r', [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]], { noremap = true, silent = true })
+keymap('n', '<c-p>', [[<cmd>lua require'telescope.builtin'.find_files()<CR>]], opts)
+keymap('n', '<leader>r', [[<cmd>lua require'telescope.builtin'.live_grep()<CR>]], opts)
 
 -- double slash(escaped)
-vim.api.nvim_set_keymap('n', '\\\\', [[<cmd>Telescope buffers<CR>]], { noremap = true, silent = true })
+keymap('n', '\\\\', [[<cmd>Telescope buffers<CR>]], opts)
 
-vim.api.nvim_set_keymap('n', '<leader>fh', [[<cmd>Telescope help_tags<CR>]], { noremap = true, silent = true })
+-- keymap('n', '<leader>fh', [[<cmd>Telescope help_tags<CR>]], opts)
 
-vim.api.nvim_set_keymap('n', '<leader>vrc', [[<cmd>lua require'theprimeagen.telescope'.search_dotfiles()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>hf', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", { noremap = true, silent = true })
+keymap('n', '<leader>vrc', [[<cmd>lua require'theprimeagen.telescope'.search_dotfiles()<CR>]], opts)
+keymap('n', '<leader>hf', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)

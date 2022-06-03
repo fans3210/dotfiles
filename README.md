@@ -10,16 +10,10 @@ install ripgrep for live grep of telescope
 
 $ brew install ripgrep
 
-Clone in dirctory ~/.config
+Clone project in home directory
 
-$ stow --ignore=DS_Store -v-S .
-
-To make .tmux.conf available in home direcotry, can use:
-
-$ stow -S tmux -t ~
-
-After tree-sitter plugin installed, check whether parser for each language installed, if not, config like eg:
-$ :TSInstall javascript
+Stow folders to home directory
+$ stow \*/ -t ~
 
 Config tmux
 
