@@ -18,5 +18,5 @@ keymap("i", "<C-S>", "<Esc>:update<cr>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- toggle last buffer
-keymap("n", "<TAB>", "<C-6>", opts)
+-- -- toggle last buffer
+-- keymap("n", "<TAB>", "<C-6>", opts)
