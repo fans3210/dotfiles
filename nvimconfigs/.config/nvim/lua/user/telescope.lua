@@ -35,4 +35,4 @@ keymap('n', '\\\\', [[<cmd>Telescope buffers<CR>]], opts)
 -- keymap('n', '<leader>fh', [[<cmd>Telescope help_tags<CR>]], opts)
 
 keymap('n', '<leader>vrc', [[<cmd>lua require'theprimeagen.telescope'.search_dotfiles()<CR>]], opts)
-keymap('n', '<leader>hf', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)
+keymap('n', '<leader>fh', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", opts)
