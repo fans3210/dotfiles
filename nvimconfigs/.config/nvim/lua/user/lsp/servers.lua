@@ -1,5 +1,6 @@
 local handlers = require 'user.lsp.handlers'
 local lspconfig = require 'lspconfig'
+local configs = require 'lspconfig/configs'
 
 local opts = { on_attach = handlers.on_attach, capabilities = handlers.capabilities }
 
@@ -52,6 +53,23 @@ local gopls_opts = {
 }
 gopls_opts = vim.tbl_deep_extend('force', gopls_opts, opts)
 lspconfig.gopls.setup(gopls_opts)
+
+
+-- golang lint
+if not configs.golangcilsp then
+    configs.golangcilsp = {
+        default_config = {
+            cmd = { 'golangci-lint-langserver' },
+            root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+            init_options = {
+                command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json" };
+            }
+        };
+    }
+end
+lspconfig.golangci_lint_ls.setup {
+    filetypes = { 'go', 'gomod' }
+}
 
 
 local bashls_opts = {}
